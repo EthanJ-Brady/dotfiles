@@ -11,9 +11,6 @@ set backspace=indent,eol,start
 
 nnoremap <C-t> :NERDTreeToggle<CR>
 
-" For local replace
-nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
-
 " Vim-Plug plugins
 call plug#begin('~/.vim/plugged')
 Plug 'dense-analysis/ale'
