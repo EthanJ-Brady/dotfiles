@@ -1,6 +1,14 @@
 " Styling
 autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
 
+set autoindent
+set smartindent
+set number
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set backspace=indent,eol,start
+
 nnoremap <C-t> :NERDTreeToggle<CR>
 
 " For local replace
