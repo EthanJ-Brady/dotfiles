@@ -16,6 +16,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'dense-analysis/ale'
 Plug 'github/copilot.vim'
 Plug 'preservim/nerdtree'
+Plug 'lervag/vimtex'
 call plug#end()
 
 " Ale config
