@@ -8,6 +8,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set backspace=indent,eol,start
+set wrap
+set linebreak
+set breakindent
 
 nnoremap <C-t> :NERDTreeToggle<CR>
 
@@ -17,6 +20,7 @@ Plug 'dense-analysis/ale'
 Plug 'github/copilot.vim'
 Plug 'preservim/nerdtree'
 Plug 'lervag/vimtex'
+Plug 'majutsushi/tagbar'
 call plug#end()
 
 " Ale config
