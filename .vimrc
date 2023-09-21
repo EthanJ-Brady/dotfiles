@@ -13,6 +13,10 @@ set linebreak
 set breakindent
 
 nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-Up> <C-W>k
+nnoremap <C-Down> <C-W>j
+nnoremap <C-Left> <C-W>h
+nnoremap <C-Right> <C-W>l
 
 " Vim-Plug plugins
 call plug#begin('~/.vim/plugged')
