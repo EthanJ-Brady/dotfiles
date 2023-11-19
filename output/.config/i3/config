@@ -39,7 +39,7 @@ exec --no-startup-id nm-applet
 exec_always --no-startup-id feh --bg-scale ~/Media/Wallpapers/minimal-mountains-landscape.png
 
 # Start picom. This is a compositor that provides transparency effects. Needed for rofi themes.
-exec_always --no-startup-id picom -fb
+exec_always --no-startup-id picom -fb --experimental-backends
 
 exec_always killall polybar
 exec_always polybar -r
