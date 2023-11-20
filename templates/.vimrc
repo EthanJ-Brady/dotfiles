@@ -29,7 +29,7 @@ call plug#end()
 
 " Ale config
 let g:ale_enbaled = 1
-let g:ale_linters = {'cpp': ['gcc']}
-let g:ale_linters = {'python': ['flake8']}
+let g:ale_linters = {{'cpp': ['gcc']}}
+let g:ale_linters = {{'python': ['flake8']}}
 
 let g:ale_java_checkstyle_executable = '~/.config/checkstyle/checkstyle.xml'

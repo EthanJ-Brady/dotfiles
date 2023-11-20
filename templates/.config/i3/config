@@ -12,8 +12,7 @@ gaps outer 10
 
 default_border pixel 0
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
+# Font for window titles. 
 font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -158,7 +157,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
-mode "resize" {
+mode "resize" {{
         # These bindings trigger as soon as you enter the resize mode
 
         # Pressing left will shrink the window’s width.
@@ -180,7 +179,7 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
-}
+}}
 
 bindsym $mod+r mode "resize"
 

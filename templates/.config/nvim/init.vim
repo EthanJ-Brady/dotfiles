@@ -36,7 +36,7 @@ call plug#begin('~/.config/nvim/plugged')
  Plug 'honza/vim-snippets'
  Plug 'scrooloose/nerdtree'
  Plug 'preservim/nerdcommenter'
- Plug 'neoclide/coc.nvim', {'branch': 'release'}
+ Plug 'neoclide/coc.nvim', {{'branch': 'release'}}
  Plug 'github/copilot.vim'
  Plug 'majutsushi/tagbar'
 call plug#end()

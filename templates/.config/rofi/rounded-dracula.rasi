@@ -4,7 +4,7 @@
  * Theme Repo           : https://github.com/lr-tech/rofi-themes-collection
  *******************************************************************************/
 
-* {
+* {{
     bg0:    #282A2E;
     bg1:    #373B41;
     bg2:    #4C566A80;
@@ -13,10 +13,10 @@
     fg1:    #726EB7;
     fg2:    #726EB7;
     fg3:    #4C566A;
-}
+}}
 
 @import "rounded-common.rasi"
 
-element selected {
+element selected {{
     text-color: @bg1;
-}
+}}
