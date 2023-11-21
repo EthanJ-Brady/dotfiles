@@ -23,20 +23,29 @@ set linebreak
 set breakindent
 set encoding=utf-8
 
+"Nerdtree toggle
 nnoremap <C-t> :NERDTreeToggle<CR>
+
+"Control arrow keys for window navigation
 nnoremap <C-Up> <C-W>k
 nnoremap <C-Down> <C-W>j
 nnoremap <C-Left> <C-W>h
 nnoremap <C-Right> <C-W>l
 
+"Smooth scroll keybinds
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 5, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 5, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 5, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 5, 4)<CR>
+
 call plug#begin('~/.config/nvim/plugged')
- " Plugin Section
  Plug 'ryanoasis/vim-devicons'
- Plug 'SirVer/ultisnips'
  Plug 'honza/vim-snippets'
  Plug 'scrooloose/nerdtree'
  Plug 'preservim/nerdcommenter'
  Plug 'neoclide/coc.nvim', {{'branch': 'release'}}
  Plug 'github/copilot.vim'
  Plug 'majutsushi/tagbar'
+ Plug 'ap/vim-css-color'
+ Plug 'terryma/vim-smooth-scroll'
 call plug#end()
