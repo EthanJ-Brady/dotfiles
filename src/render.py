@@ -22,5 +22,5 @@ def render_dir(in_path: str, out_path: str, context_path: str) -> None:
         else:
             render_file(child, f"{out_path}/{child.name}", context_path)
 
-def render(context_path: str) -> None:
-    render_dir('templates', 'output', context_path)
+def render(in_path: str, out_path:str , context_path: str) -> None:
+    render_dir(in_path, out_path, context_path)

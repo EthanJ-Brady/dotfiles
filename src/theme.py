@@ -3,8 +3,11 @@ from .render import render
 from .link import link, copy
 from pathlib import Path
 
-CONTEXTS_PATH = Path(__file__).parent.parent / "contexts"
-OUTPUT_PATH = Path(__file__).parent.parent / "output"
+DOTFILE_PATH = Path(__file__).parent.parent.resolve()
+
+CONTEXTS_PATH = DOTFILE_PATH / Path(__file__).parent.parent / "contexts"
+TEMPLATES_PATH = DOTFILE_PATH / Path(__file__).parent.parent / "templates"
+OUTPUT_PATH = DOTFILE_PATH / Path(__file__).parent.parent / "output"
 HOME_PATH = Path("~").expanduser()
 
 METHODS = {
@@ -20,7 +23,7 @@ def get_theme_path(theme: str) -> str:
 
 def select_theme(theme: str):
     theme_path = get_theme_path(theme)
-    render(theme_path)
+    render(TEMPLATES_PATH, OUTPUT_PATH, theme_path)
 
 def apply(method: callable):
     method(OUTPUT_PATH, HOME_PATH)

@@ -105,3 +105,5 @@ export MANGOHUD_DLSYM=1
 # Created by `pipx` on 2023-08-22 06:59:49
 export PATH="$PATH:/home/ethan/.local/bin"
 export PATH="$PATH:/home/ethan/.pyenv/bin"
+export PATH="$PATH:/home/ethan/.dotfiles/bin"
+export PATH="$PATH:/Users/ethanbrady/.dotfiles/bin"
