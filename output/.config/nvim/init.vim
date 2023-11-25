@@ -1,3 +1,7 @@
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType jsx setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType tsx setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
 set nocompatible            " disable compatibility to old-time vi
 set showmatch               " show matching 
 set ignorecase              " case insensitive 
@@ -22,6 +26,8 @@ set wrap
 set linebreak
 set breakindent
 set encoding=utf-8
+set foldmethod=indent
+set foldlevel=3
 
 "Nerdtree toggle
 nnoremap <C-t> :NERDTreeToggle<CR>
@@ -37,6 +43,9 @@ noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 5, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 5, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 5, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 5, 4)<CR>
+
+"Folding toggle
+noremap <space> za
 
 call plug#begin('~/.config/nvim/plugged')
  Plug 'ryanoasis/vim-devicons'
