@@ -47,6 +47,9 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 5, 4)<CR>
 "Folding toggle
 noremap <space> za
 
+"Show hidden files with NERDTree
+let NERDTreeShowHidden=1
+
 call plug#begin('~/.config/nvim/plugged')
  Plug 'ryanoasis/vim-devicons'
  Plug 'honza/vim-snippets'
@@ -57,4 +60,20 @@ call plug#begin('~/.config/nvim/plugged')
  Plug 'majutsushi/tagbar'
  Plug 'ap/vim-css-color'
  Plug 'terryma/vim-smooth-scroll'
+ Plug 'tpope/vim-fugitive'
+ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
+
+"Automatically enable tree-sitter syntax highlighting for supported languages
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+}
+EOF
+
+"Ignore files in NERDTree
+let NERDTreeIgnore = ['^__pycache__$', '^.DS_Store$', '^.git$', '^.venv$']
+

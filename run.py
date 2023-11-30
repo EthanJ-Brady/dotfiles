@@ -1,7 +1,9 @@
-from src import prompt_theme
+from src import select, render, apply
 
 def main():
-    prompt_theme()
+    select()
+    render()
+    apply()
 
 if __name__ == '__main__':
     main()

@@ -1,3 +1,3 @@
-from .link import link
+from .select import select
 from .render import render
-from .theme import prompt_theme
+from .apply import apply
