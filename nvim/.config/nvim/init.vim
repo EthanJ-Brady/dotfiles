@@ -30,7 +30,16 @@ set foldlevel=3
 set ignorecase smartcase
 
 "Nerdtree toggle
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <D-s> :NERDTreeToggle<CR>
+
+"Close nerdtree when selecting a file 
+let NERDTreeQuitOnOpen=1
+
+"Show hidden files with NERDTree
+let NERDTreeShowHidden=1
+
+"Search with command + f
+nnoremap <D-f> /
 
 "Close nerdtree when opening a file
 let NERDTreeQuitOnOpen=1
@@ -42,6 +51,16 @@ nnoremap <C-W><Left> <C-W>h
 nnoremap <C-W><Right> <C-W>l
 
 "Adds in the classic control backspace and delete functionality
+inoremap <C-BS> <C-o>dB
+inoremap <C-Del> <C-o>de
+
+"Map home and end keys to beginning and end of line
+noremap <silent> <Home> ^ 
+noremap <silent> <End> $
+inoremap <silent> <Home> <C-o>^
+inoremap <silent> <End> <C-o>$
+
+"ADds in the classic control backspace and delete
 inoremap <C-BS> <C-o>dB
 inoremap <C-Del> <C-o>de
 
@@ -64,31 +83,28 @@ inoremap <silent> <End> <C-o>$
 "Folding toggle
 noremap <space> za
 
-"Show hidden files with NERDTree
-let NERDTreeShowHidden=1
-
 call plug#begin('~/.config/nvim/plugged')
  Plug 'ryanoasis/vim-devicons'
  Plug 'honza/vim-snippets'
  Plug 'scrooloose/nerdtree'
  Plug 'preservim/nerdcommenter'
- Plug 'neoclide/coc.nvim', {{'branch': 'release'}}
+ Plug 'neoclide/coc.nvim', {'branch': 'release'}
  Plug 'github/copilot.vim'
  Plug 'majutsushi/tagbar'
  Plug 'ap/vim-css-color'
  Plug 'terryma/vim-smooth-scroll'
  Plug 'tpope/vim-fugitive'
- Plug 'nvim-treesitter/nvim-treesitter', {{'do': ':TSUpdate'}}
+ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 "Automatically enable tree-sitter syntax highlighting for supported languages
 lua <<EOF
-require'nvim-treesitter.configs'.setup {{
-  highlight = {{
+require'nvim-treesitter.configs'.setup {
+  highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
-  }},
-}}
+  },
+}
 EOF
 
 "Ignore files in NERDTree
