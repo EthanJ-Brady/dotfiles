@@ -1,6 +1,5 @@
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType jsx setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType tsx setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType typescriptreact setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 set nocompatible            " disable compatibility to old-time vi
 set showmatch               " show matching 
@@ -28,6 +27,7 @@ set breakindent
 set encoding=utf-8
 set foldmethod=indent
 set foldlevel=3
+set ignorecase smartcase
 
 "Nerdtree toggle
 nnoremap <D-s> :NERDTreeToggle<CR>
@@ -41,11 +41,18 @@ let NERDTreeShowHidden=1
 "Search with command + f
 nnoremap <D-f> /
 
+"Close nerdtree when opening a file
+let NERDTreeQuitOnOpen=1
+
 "Control arrow keys for window navigation
-nnoremap <C-Up> <C-W>k
-nnoremap <C-Down> <C-W>j
-nnoremap <C-Left> <C-W>h
-nnoremap <C-Right> <C-W>l
+nnoremap <C-W><Up> <C-W>k
+nnoremap <C-W><Down> <C-W>j
+nnoremap <C-W><Left> <C-W>h
+nnoremap <C-W><Right> <C-W>l
+
+"Adds in the classic control backspace and delete functionality
+inoremap <C-BS> <C-o>dB
+inoremap <C-Del> <C-o>de
 
 "Map home and end keys to beginning and end of line
 noremap <silent> <Home> ^
@@ -66,6 +73,12 @@ noremap <silent> <PageUp> :call smooth_scroll#up(&scroll, 10, 2)<cr>
 noremap <silent> <PageDown> :call smooth_scroll#down(&scroll, 10, 2)<cr>
 inoremap <silent> <PageUp> :call smooth_scroll#up(&scroll, 10, 2)<cr>
 inoremap <silent> <PageDown> :call smooth_scroll#down(&scroll, 10, 2)<CR>
+
+"Home and End keys
+noremap <silent> <Home> ^
+noremap <silent> <End> $
+inoremap <silent> <Home> <C-o>^
+inoremap <silent> <End> <C-o>$
 
 "Folding toggle
 noremap <space> za
