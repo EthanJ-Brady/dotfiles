@@ -32,6 +32,12 @@ set foldlevel=3
 "Nerdtree toggle
 nnoremap <D-s> :NERDTreeToggle<CR>
 
+"Close nerdtree when selecting a file 
+let NERDTreeQuitOnOpen=1
+
+"Show hidden files with NERDTree
+let NERDTreeShowHidden=1
+
 "Search with command + f
 nnoremap <D-f> /
 
@@ -41,6 +47,16 @@ nnoremap <C-Down> <C-W>j
 nnoremap <C-Left> <C-W>h
 nnoremap <C-Right> <C-W>l
 
+"Map home and end keys to beginning and end of line
+noremap <silent> <Home> ^ 
+noremap <silent> <End> $
+inoremap <silent> <Home> <C-o>^
+inoremap <silent> <End> <C-o>$
+
+"ADds in the classic control backspace and delete
+inoremap <C-BS> <C-o>dB
+inoremap <C-Del> <C-o>de
+
 "Smooth scroll keybinds
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 5, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 5, 2)<CR>
@@ -49,9 +65,6 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 5, 4)<CR>
 
 "Folding toggle
 noremap <space> za
-
-"Show hidden files with NERDTree
-let NERDTreeShowHidden=1
 
 call plug#begin('~/.config/nvim/plugged')
  Plug 'ryanoasis/vim-devicons'
