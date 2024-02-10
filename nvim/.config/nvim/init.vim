@@ -48,7 +48,7 @@ nnoremap <C-Left> <C-W>h
 nnoremap <C-Right> <C-W>l
 
 "Map home and end keys to beginning and end of line
-noremap <silent> <Home> ^ 
+noremap <silent> <Home> ^
 noremap <silent> <End> $
 inoremap <silent> <Home> <C-o>^
 inoremap <silent> <End> <C-o>$
@@ -62,6 +62,10 @@ noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 5, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 5, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 5, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 5, 4)<CR>
+noremap <silent> <PageUp> :call smooth_scroll#up(&scroll, 10, 2)<cr>
+noremap <silent> <PageDown> :call smooth_scroll#down(&scroll, 10, 2)<cr>
+inoremap <silent> <PageUp> :call smooth_scroll#up(&scroll, 10, 2)<cr>
+inoremap <silent> <PageDown> :call smooth_scroll#down(&scroll, 10, 2)<CR>
 
 "Folding toggle
 noremap <space> za
