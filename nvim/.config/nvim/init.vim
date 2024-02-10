@@ -30,7 +30,10 @@ set foldmethod=indent
 set foldlevel=3
 
 "Nerdtree toggle
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <D-s> :NERDTreeToggle<CR>
+
+"Search with command + f
+nnoremap <D-f> /
 
 "Control arrow keys for window navigation
 nnoremap <C-Up> <C-W>k
