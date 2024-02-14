@@ -19,7 +19,7 @@ syntax on                   " syntax highlighting
 set mouse=a                 " enable mouse click
 set clipboard=unnamedplus   " using system clipboard
 filetype plugin on
-set cursorline              " highlight current cursorline
+"set cursorline              " highlight current cursorline
 set ttyfast                 " Speed up scrolling in Vim
 set wrap
 set linebreak
@@ -28,6 +28,9 @@ set encoding=utf-8
 set foldmethod=indent
 set foldlevel=3
 set ignorecase smartcase
+
+"Sets the colors of the line numbers
+highlight LineNr ctermfg=darkgrey
 
 "Nerdtree toggle
 nnoremap <D-s> :NERDTreeToggle<CR>
@@ -96,13 +99,20 @@ call plug#begin('~/.config/nvim/plugged')
  Plug 'tpope/vim-fugitive'
  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
  Plug 'lambdalisue/glyph-palette.vim'
+ Plug 'williamboman/mason.nvim'
 call plug#end()
 
+"Glyph Palette setup
 augroup my-glyph-palette
   autocmd! *
   autocmd FileType fern call glyph_palette#apply()
   autocmd FileType nerdtree,startify call glyph_palette#apply()
 augroup END
+
+"Mason setup
+lua <<EOF
+require("mason").setup()
+EOF
 
 "Automatically enable tree-sitter syntax highlighting for supported languages
 lua <<EOF
