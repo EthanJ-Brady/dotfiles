@@ -95,7 +95,14 @@ call plug#begin('~/.config/nvim/plugged')
  Plug 'terryma/vim-smooth-scroll'
  Plug 'tpope/vim-fugitive'
  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+ Plug 'lambdalisue/glyph-palette.vim'
 call plug#end()
+
+augroup my-glyph-palette
+  autocmd! *
+  autocmd FileType fern call glyph_palette#apply()
+  autocmd FileType nerdtree,startify call glyph_palette#apply()
+augroup END
 
 "Automatically enable tree-sitter syntax highlighting for supported languages
 lua <<EOF
