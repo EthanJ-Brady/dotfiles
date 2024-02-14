@@ -31,6 +31,7 @@ set ignorecase smartcase
 
 "Sets the colors of the line numbers
 highlight LineNr ctermfg=darkgrey
+highlight nonText ctermfg=darkgrey
 
 "Nerdtree toggle
 nnoremap <D-s> :NERDTreeToggle<CR>
@@ -87,43 +88,41 @@ inoremap <silent> <End> <C-o>$
 noremap <space> za
 
 call plug#begin('~/.config/nvim/plugged')
- Plug 'ryanoasis/vim-devicons'
- Plug 'honza/vim-snippets'
- Plug 'scrooloose/nerdtree'
- Plug 'preservim/nerdcommenter'
- Plug 'neoclide/coc.nvim', {'branch': 'release'}
- Plug 'github/copilot.vim'
- Plug 'majutsushi/tagbar'
- Plug 'ap/vim-css-color'
- Plug 'terryma/vim-smooth-scroll'
- Plug 'tpope/vim-fugitive'
- Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
- Plug 'lambdalisue/glyph-palette.vim'
- Plug 'williamboman/mason.nvim'
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'honza/vim-snippets'
+    Plug 'scrooloose/nerdtree'
+    Plug 'preservim/nerdcommenter'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'github/copilot.vim'
+    Plug 'majutsushi/tagbar'
+    Plug 'ap/vim-css-color'
+    Plug 'terryma/vim-smooth-scroll'
+    Plug 'tpope/vim-fugitive'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'lambdalisue/glyph-palette.vim'
+    Plug 'williamboman/mason.nvim'
+    Plug 'lukas-reineke/indent-blankline.nvim'
+    Plug 'nvim-lualine/lualine.nvim'
 call plug#end()
 
 "Glyph Palette setup
 augroup my-glyph-palette
-  autocmd! *
-  autocmd FileType fern call glyph_palette#apply()
-  autocmd FileType nerdtree,startify call glyph_palette#apply()
+    autocmd! *
+    autocmd FileType fern call glyph_palette#apply()
+    autocmd FileType nerdtree,startify call glyph_palette#apply()
 augroup END
-
-"Mason setup
-lua <<EOF
-require("mason").setup()
-EOF
-
-"Automatically enable tree-sitter syntax highlighting for supported languages
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = false,
-  },
-}
-EOF
 
 "Ignore files in NERDTree
 let NERDTreeIgnore = ['^__pycache__$', '^.DS_Store$', '^.git$', '^.venv$']
 
+lua <<EOF
+require("mason").setup()
+require("ibl").setup { indent = { char = "│" } }
+require("lualine").setup { options = { theme = "dracula" } }
+require'nvim-treesitter.configs'.setup {
+    highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+    },
+}
+EOF
