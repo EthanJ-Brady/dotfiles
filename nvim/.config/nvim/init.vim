@@ -28,6 +28,18 @@ set encoding=utf-8
 set foldmethod=indent
 set foldlevel=3
 set ignorecase smartcase
+set relativenumber
+
+"Sets the leader key to space
+let mapleader = " "
+nnoremap <Space> <Nop>
+
+"Replace the highlighted text with the system clipboard
+nnoremap <leader>p _dP
+
+"Move a line up or down
+nnoremap <Leader><Up> :m .-2<CR>
+nnoremap <Leader><Down> :m .+1<CR>
 
 "Sets the colors of the line numbers
 highlight LineNr ctermfg=darkgrey
@@ -85,9 +97,6 @@ noremap <silent> <Home> ^
 noremap <silent> <End> $
 inoremap <silent> <Home> <C-o>^
 inoremap <silent> <End> <C-o>$
-
-"Folding toggle
-noremap <space> za
 
 call plug#begin('~/.config/nvim/plugged')
     Plug 'ryanoasis/vim-devicons' "NerdTree icons
