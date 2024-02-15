@@ -32,6 +32,8 @@ set ignorecase smartcase
 "Sets the colors of the line numbers
 highlight LineNr ctermfg=darkgrey
 highlight nonText ctermfg=darkgrey
+highlight NormalFloat ctermfg=white ctermbg=darkgrey
+highlight MatchParen ctermfg=white ctermbg=darkgrey
 
 "Nerdtree toggle
 nnoremap <D-s> :NERDTreeToggle<CR>
@@ -88,21 +90,21 @@ inoremap <silent> <End> <C-o>$
 noremap <space> za
 
 call plug#begin('~/.config/nvim/plugged')
-    Plug 'ryanoasis/vim-devicons'
-    Plug 'honza/vim-snippets'
-    Plug 'scrooloose/nerdtree'
-    Plug 'preservim/nerdcommenter'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'github/copilot.vim'
-    Plug 'majutsushi/tagbar'
-    Plug 'ap/vim-css-color'
-    Plug 'terryma/vim-smooth-scroll'
-    Plug 'tpope/vim-fugitive'
-    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-    Plug 'lambdalisue/glyph-palette.vim'
-    Plug 'williamboman/mason.nvim'
-    Plug 'lukas-reineke/indent-blankline.nvim'
-    Plug 'nvim-lualine/lualine.nvim'
+    Plug 'ryanoasis/vim-devicons' "NerdTree icons
+    Plug 'scrooloose/nerdtree' "File explorer
+    Plug 'preservim/nerdcommenter' "Commenting
+    Plug 'github/copilot.vim' "GitHub Copilot
+    Plug 'majutsushi/tagbar' "Code outline
+    Plug 'ap/vim-css-color' "CSS color preview
+    Plug 'terryma/vim-smooth-scroll' "Smooth scroll with ctrl+u and ctrl+d
+    Plug 'tpope/vim-fugitive' "Git commands
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} "Syntax highlighting
+    Plug 'lambdalisue/glyph-palette.vim' "NerdTree icon colors
+    Plug 'williamboman/mason.nvim' "Package manager
+    Plug 'williamboman/mason-lspconfig.nvim' "LSP
+    Plug 'neovim/nvim-lspconfig' "LSP
+    Plug 'lukas-reineke/indent-blankline.nvim' "Indent line characters
+    Plug 'nvim-lualine/lualine.nvim' "Status line
 call plug#end()
 
 "Glyph Palette setup
@@ -117,7 +119,14 @@ let NERDTreeIgnore = ['^__pycache__$', '^.DS_Store$', '^.git$', '^.venv$']
 
 lua <<EOF
 require("mason").setup()
-require("ibl").setup { indent = { char = "│" } }
+require("mason-lspconfig").setup()
+require("lspconfig").pyright.setup {}
+vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {noremap = true, silent = true})
+require("ibl").setup { 
+    indent = { char = "│" },
+    scope = { enabled = false },
+}
 require("lualine").setup { options = { theme = "dracula" } }
 require'nvim-treesitter.configs'.setup {
     highlight = {
