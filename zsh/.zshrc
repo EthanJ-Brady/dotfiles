@@ -19,11 +19,19 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    git
+    zsh-syntax-highlighting
+)
 
 source $ZSH/oh-my-zsh.sh
 
 eval "$(zoxide init zsh)"
+
+# Add a blank line before new commands
+function precmd() {
+  echo ""
+}
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
