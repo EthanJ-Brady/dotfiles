@@ -105,6 +105,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'neovim/nvim-lspconfig' "LSP
     Plug 'lukas-reineke/indent-blankline.nvim' "Indent line characters
     Plug 'nvim-lualine/lualine.nvim' "Status line
+    Plug 'lervag/vimtex'
 call plug#end()
 
 "Glyph Palette setup
@@ -129,9 +130,10 @@ require("ibl").setup {
 }
 require("lualine").setup { options = { theme = "dracula" } }
 require'nvim-treesitter.configs'.setup {
-    highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-    },
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+    disable = { "latex" },
+  },
 }
 EOF
