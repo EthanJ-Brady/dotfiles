@@ -35,6 +35,9 @@ eval "$(zoxide init zsh)"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias python='python3'
 alias cd='z'
+alias ls='eza'
+alias ll='eza -lh'
+alias l='eza -lah'
 
 export MANGOHUD=1
 export MANGOHUD_DLSYM=1
