@@ -133,6 +133,7 @@ require("mason-lspconfig").setup()
 require("lspconfig").pyright.setup {}
 vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', {noremap = true, silent = true})
 require("ibl").setup { 
     indent = { char = "│" },
     scope = { enabled = false },
@@ -145,4 +146,8 @@ require'nvim-treesitter.configs'.setup {
     disable = { "latex" },
   },
 }
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = false,
+})
 EOF
