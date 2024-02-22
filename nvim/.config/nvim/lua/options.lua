@@ -16,7 +16,6 @@ vim.o.linebreak = true              -- wrap lines at convenient points
 vim.o.breakindent = true            -- indent wrapped lines
 vim.o.encoding = "utf-8"            -- set encoding to utf-8
 vim.o.foldmethod = "indent"         -- fold based on indent
-vim.o.foldlevel = 3                 -- fold level
 vim.o.ignorecase = true             -- ignore case in search
 vim.o.smartcase = true              -- ignore case in search unless an uppercase letter is used
 vim.o.relativenumber = true         -- relative line numbers
