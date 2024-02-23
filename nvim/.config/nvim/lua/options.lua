@@ -1,6 +1,5 @@
 vim.o.showmatch = true              -- show matching 
 vim.o.ignorecase = true             -- case insensitive 
-vim.o.mouse = true                  -- middle-click paste with 
 vim.o.hlsearch = true               -- highlight search 
 vim.o.incsearch = true              -- incremental search
 vim.o.tabstop = 4                   -- number of columns occupied by a tab 
@@ -13,7 +12,8 @@ vim.o.wildmode = "longest,list"     -- get bash-like tab completions
 vim.o.ttyfast = true                -- faster redrawing
 vim.o.wrap = true                   -- wrap lines
 vim.o.linebreak = true              -- wrap lines at convenient points
-vim.o.breakindent = true            -- indent wrapped lines
+vim.o.breakindent = true            -- indent wrapped
+vim.o.breakindentopt = "shift:4"    -- set breakindent options
 vim.o.encoding = "utf-8"            -- set encoding to utf-8
 vim.o.foldmethod = "indent"         -- fold based on indent
 vim.o.foldlevel = 99                -- open all folds
