@@ -1,6 +1,6 @@
 vim.api.nvim_set_hl(0, 'LineNr', {ctermfg='DarkGrey'})
 vim.api.nvim_set_hl(0, 'NonText', {ctermfg='DarkGrey'})
-vim.api.nvim_set_hl(0, 'NormalFloat', {ctermfg='White', ctermbg='DarkGrey'})
+vim.api.nvim_set_hl(0, 'NormalFloat', {ctermfg='White', ctermbg='NONE'})
 vim.api.nvim_set_hl(0, 'MatchParen', {ctermfg='White', ctermbg='DarkGrey'})
 
 -- Glyph Palette Setup
