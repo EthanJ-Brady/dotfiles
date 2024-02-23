@@ -49,5 +49,7 @@ vim.cmd [[
 
 -- Keymaps for LSP functionalities
 vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'K', ':Lspsaga peek_definition<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>rn', ':Lspsaga rename<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'gr', ':Lspsaga finder<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<C-k>', ':Lspsaga outline<CR>', {noremap = true, silent = true})
