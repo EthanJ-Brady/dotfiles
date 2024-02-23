@@ -3,7 +3,6 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'scrooloose/nerdtree' "File explorer
     Plug 'preservim/nerdcommenter' "Commenting
     Plug 'github/copilot.vim' "GitHub Copilot
-    Plug 'majutsushi/tagbar' "Code outline
     Plug 'ap/vim-css-color' "CSS color preview
     Plug 'terryma/vim-smooth-scroll' "Smooth scroll with ctrl+u and ctrl+d
     Plug 'tpope/vim-fugitive' "Git commands
