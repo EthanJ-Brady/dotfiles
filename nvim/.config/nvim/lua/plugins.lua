@@ -25,3 +25,6 @@ require'nvim-treesitter.configs'.setup {
     disable = { "latex" },
   },
 }
+
+-- Setup for lspsaga.nvim
+require("lspsaga").setup({})

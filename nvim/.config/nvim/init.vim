@@ -15,6 +15,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'lukas-reineke/indent-blankline.nvim' "Indent line characters
     Plug 'nvim-lualine/lualine.nvim' "Status line
     Plug 'lervag/vimtex'
+    Plug 'nvimdev/lspsaga.nvim' "LSP UI
 call plug#end()
 
 lua require("plugins")
