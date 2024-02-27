@@ -8,3 +8,4 @@
 - [Zoxide](https://github.com/ajeetdsouza/zoxide)
 - [Oh My ZSH](https://github.com/ohmyzsh/ohmyzsh/tree/master)
 - [Kitty](https://github.com/kovidgoyal/kitty)
+- [Bat](https://github.com/sharkdp/bat)

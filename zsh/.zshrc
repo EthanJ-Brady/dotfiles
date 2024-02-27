@@ -18,6 +18,7 @@ alias cd='z'                                # Use zoxide as the default cd
 alias ls='eza'                              # Use eza as the default ls
 alias ll='eza -lh'                          # ...
 alias l='eza -lah'                          # ...
+alias cat='bat'                             # Use bat as the default cat
 
 export PATH="$PATH:/home/ethan/.local/bin"  # Add local bin to the path 
 export PATH="$PATH:/home/ethan/.pyenv/bin"  # Add pyenv to the path
