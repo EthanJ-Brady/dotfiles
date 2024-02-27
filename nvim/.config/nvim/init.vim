@@ -15,6 +15,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'nvim-lualine/lualine.nvim' "Status line
     Plug 'lervag/vimtex'
     Plug 'nvimdev/lspsaga.nvim' "LSP UI
+    Plug 'airblade/vim-gitgutter' "Git diff
 call plug#end()
 
 lua require("plugins")

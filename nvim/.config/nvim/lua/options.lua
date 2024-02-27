@@ -22,6 +22,7 @@ vim.o.smartcase = true              -- ignore case in search unless an uppercase
 vim.o.relativenumber = true         -- relative line numbers
 --vim.o.mouse = "a"                   -- enable mouse click
 vim.o.clipboard = "unnamedplus"     -- using system clipboard
+vim.o.signcolumn = "yes"            -- always show sign column
 
 -- NerdTree options
 vim.g.NERDTreeQuitOnOpen = 1
@@ -31,5 +32,5 @@ vim.g.NERDTreeIgnore = {'^__pycache__$', '^.DS_Store$', '^.git$', '^.venv$'}
 -- Diagnostic configuration for LSP
 vim.diagnostic.config({
   virtual_text = true,
-  signs = false,
+  signs = true,
 })
