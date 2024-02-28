@@ -53,3 +53,7 @@ vim.api.nvim_set_keymap('n', 'K', ':Lspsaga hover_doc<CR>', {noremap = true, sil
 vim.api.nvim_set_keymap('n', '<Leader>rn', ':Lspsaga rename<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', 'gr', ':Lspsaga finder<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<C-k>', ':Lspsaga outline<CR>', {noremap = true, silent = true})
+
+-- Keymaps for git
+vim.api.nvim_set_keymap('n', '<Leader>gc', ':G commit -m ""<left>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<Leader>ga', ':G add .<CR>', {noremap = true, silent = true})
