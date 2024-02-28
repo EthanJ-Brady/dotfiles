@@ -4,3 +4,6 @@
 [submodule "oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
 	path = oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "/Users/ethanbrady/Dotfiles/zsh/.oh-my-zsh/custom/plugins/zsh-fzf-history-search"]
+	path = /Users/ethanbrady/Dotfiles/zsh/.oh-my-zsh/custom/plugins/zsh-fzf-history-search
+	url = https://github.com/joshskidmore/zsh-fzf-history-search

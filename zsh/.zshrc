@@ -6,6 +6,7 @@ ENABLE_CORRECTION="true"                    # Enable correction feature
 plugins=(
     git
     zsh-syntax-highlighting
+    zsh-fzf-history-search
 )
 
 source $ZSH/oh-my-zsh.sh                    # Load oh-my-zsh
