@@ -1,11 +1,11 @@
 -- Setup lazy nvim plugins
 require("lazy").setup({
     {
-        'ryanoasis/vim-devicons'
-    },                                          -- NerdTree icons
-    {
         'preservim/nerdtree',
     },                                          -- File explorer
+    {
+        'ryanoasis/vim-devicons'
+    },                                          -- NerdTree icons
     {
         'preservim/nerdcommenter',
     },                                          -- Commenting
@@ -23,6 +23,7 @@ require("lazy").setup({
     },                                          -- Git commands
     {
         'nvim-treesitter/nvim-treesitter',
+        build = ':TSUpdate'
     },                                          -- Syntax highlighting
     {
         'lambdalisue/glyph-palette.vim',
