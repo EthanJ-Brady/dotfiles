@@ -37,7 +37,15 @@ require("lazy").setup({
     },                                          -- Git commands
     {
         'nvim-treesitter/nvim-treesitter',
-        build = ':TSUpdate'
+        build = ':TSUpdate',
+        config = function()
+            require("nvim-treesitter.configs").setup {
+                ensure_installed = { "python", "markdown", "markdown_inline", "html", "css", "javascript", "typescript", "lua", "json", "yaml", "toml", "bash", "c", "cpp", "rust", "go", "java", "regex", "tsx" },
+                highlight = {
+                    enable = true,
+                },
+            }
+        end
     },                                          -- Syntax highlighting
     {
         'lambdalisue/glyph-palette.vim',
