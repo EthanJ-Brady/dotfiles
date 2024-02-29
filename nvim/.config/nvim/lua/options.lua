@@ -24,11 +24,6 @@ vim.o.relativenumber = true         -- relative line numbers
 vim.o.clipboard = "unnamedplus"     -- using system clipboard
 vim.o.signcolumn = "yes"            -- always show sign column
 
--- NerdTree options
-vim.g.NERDTreeQuitOnOpen = 1
-vim.g.NERDTreeShowHidden = 1
-vim.g.NERDTreeIgnore = {'^__pycache__$', '^.DS_Store$', '^.git$', '^.venv$'}
-
 -- Diagnostic configuration for LSP
 vim.diagnostic.config({
   virtual_text = true,

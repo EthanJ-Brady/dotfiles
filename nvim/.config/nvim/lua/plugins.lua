@@ -1,11 +1,25 @@
 -- Setup lazy nvim plugins
 require("lazy").setup({
     {
-        'preservim/nerdtree',
-    },                                          -- File explorer
-    {
-        'ryanoasis/vim-devicons'
-    },                                          -- NerdTree icons
+        "nvim-tree/nvim-tree.lua",
+        version = "*",
+        lazy = false,
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        config = function()
+            require("nvim-tree").setup {
+                view = {
+                    cursorline = false,
+                },
+                actions = {
+                    open_file = {
+                        quit_on_open = true,
+                    }
+                },
+            }
+        end
+    },
     {
         'preservim/nerdcommenter',
     },                                          -- Commenting
@@ -55,6 +69,9 @@ require("lazy").setup({
     {
         'dstein64/vim-startuptime'
     },                                          -- View startup timing information
+    {
+        'ryanoasis/vim-devicons'
+    },                                          -- NerdTree icons
 })
 
 -- Setup Mason

@@ -10,7 +10,7 @@ vim.api.nvim_set_keymap('n', '<Leader><Up>', ':m .-2<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<Leader><Down>', ':m .+1<CR>', {noremap = true})
 
 -- Nerdtree toggle
-vim.api.nvim_set_keymap('n', '<D-s>', ':NERDTreeToggle<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<D-s>', ':NvimTreeToggle<CR>', {noremap = true})
 
 -- Search with command + f
 vim.api.nvim_set_keymap('n', '<D-f>', '/', {noremap = true})
