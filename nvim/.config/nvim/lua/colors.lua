@@ -11,6 +11,12 @@ vim.api.nvim_set_hl(0, 'GitGutterAdd', {ctermfg='Green', ctermbg='NONE'})
 vim.api.nvim_set_hl(0, 'GitGutterChange', {ctermfg='Yellow', ctermbg='NONE'})
 vim.api.nvim_set_hl(0, 'GitGutterDelete', {ctermfg='Red', ctermbg='NONE'})
 
+-- VimFugitive Palette
+ vim.api.nvim_set_hl(0, 'DiffAdd', {ctermfg='Green', ctermbg='NONE'})
+ vim.api.nvim_set_hl(0, 'DiffChange', {ctermfg='Yellow', ctermbg='NONE'})
+ vim.api.nvim_set_hl(0, 'DiffDelete', {ctermfg='Red', ctermbg='NONE'})
+ vim.api.nvim_set_hl(0, 'DiffText', {ctermfg='White', ctermbg='NONE'})
+
 -- LspDiagnostics Palette
 vim.api.nvim_set_hl(0, 'DiagnosticSignError', {ctermfg='Red', ctermbg='NONE'})
 vim.api.nvim_set_hl(0, 'DiagnosticSignWarn', {ctermfg='Yellow', ctermbg='NONE'})
