@@ -24,6 +24,7 @@ vim.o.relativenumber = true         -- relative line numbers
 vim.o.clipboard = "unnamedplus"     -- using system clipboard
 vim.o.signcolumn = "yes"            -- always show sign column
 vim.o.termguicolors = true              
+vim.o.scrolloff = 8                 -- keep 8 lines above and below the cursor
 
 -- Diagnostic configuration for LSP
 vim.diagnostic.config({
