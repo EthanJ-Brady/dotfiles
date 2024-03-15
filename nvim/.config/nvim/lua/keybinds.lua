@@ -2,9 +2,6 @@
 vim.g.mapleader = " "
 vim.api.nvim_set_keymap('n', '<Space>', '<Nop>', {noremap = true})
 
--- Replace the highlighted text with the system clipboard
-vim.api.nvim_set_keymap('n', '<leader>p', '_dP', {noremap = true})
-
 -- Move a line up or down
 vim.api.nvim_set_keymap('n', '<Leader><Up>', ':m .-2<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<Leader><Down>', ':m .+1<CR>', {noremap = true})
