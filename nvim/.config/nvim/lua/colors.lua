@@ -2,6 +2,7 @@ vim.api.nvim_set_hl(0, 'LineNr', {fg='Grey42'})
 vim.api.nvim_set_hl(0, 'NonText', {fg='Grey42'})
 vim.api.nvim_set_hl(0, 'NormalFloat', {fg='White', bg='NONE'})
 vim.api.nvim_set_hl(0, 'MatchParen', {fg='White', bg='Grey42'})
+vim.api.nvim_set_hl(0, 'Visual', {bg='Grey30'})
 
 -- Column to the left of the line numbers
 vim.api.nvim_set_hl(0, 'SignColumn', {fg='DarkGrey', bg='NONE'})
