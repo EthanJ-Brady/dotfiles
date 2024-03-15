@@ -12,14 +12,11 @@ vim.api.nvim_set_keymap('n', '<Leader><Down>', ':m .+1<CR>', {noremap = true})
 -- Nerdtree toggle
 vim.api.nvim_set_keymap('n', '<D-s>', ':NvimTreeToggle<CR>', {noremap = true})
 
--- Search with command + f
-vim.api.nvim_set_keymap('n', '<D-f>', '/', {noremap = true})
-
 -- Control arrow keys for window navigation
-vim.api.nvim_set_keymap('n', '<C-W><Up>', '<C-W>k', {noremap = true})
-vim.api.nvim_set_keymap('n', '<C-W><Down>', '<C-W>j', {noremap = true})
-vim.api.nvim_set_keymap('n', '<C-W><Left>', '<C-W>h', {noremap = true})
-vim.api.nvim_set_keymap('n', '<C-W><Right>', '<C-W>l', {noremap = true})
+vim.api.nvim_set_keymap('n', '<C-Up>', '<C-W>k', {noremap = true})
+vim.api.nvim_set_keymap('n', '<C-Down>', '<C-W>j', {noremap = true})
+vim.api.nvim_set_keymap('n', '<C-Left>', '<C-W>h', {noremap = true})
+vim.api.nvim_set_keymap('n', '<C-Right>', '<C-W>l', {noremap = true})
 
 -- Adds in the classic control backspace and delete functionality
 vim.api.nvim_set_keymap('i', '<C-BS>', '<C-o>dB', {noremap = true})
