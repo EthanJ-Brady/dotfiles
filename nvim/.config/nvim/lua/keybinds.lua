@@ -3,8 +3,10 @@ vim.g.mapleader = " "
 vim.api.nvim_set_keymap('n', '<Space>', '<Nop>', {noremap = true})
 
 -- Move a line up or down
-vim.api.nvim_set_keymap('n', '<Leader><Up>', ':m .-2<CR>', {noremap = true})
-vim.api.nvim_set_keymap('n', '<Leader><Down>', ':m .+1<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<S-Up>', ':m .-2<CR>==', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<S-Down>', ':m .+1<CR>==', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<S-Up>', ":m '<-2<CR>gv=gv", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<S-Down>', ":m '>+1<CR>gv=gv", {noremap = true, silent = true})
 
 -- Nerdtree toggle
 vim.api.nvim_set_keymap('n', '<D-s>', ':NvimTreeToggle<CR>', {noremap = true})
