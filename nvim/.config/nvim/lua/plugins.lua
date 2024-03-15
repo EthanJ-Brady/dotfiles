@@ -21,7 +21,19 @@ require("lazy").setup({
         end
     },
     {
-        'preservim/nerdcommenter',
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup({
+                toggler = {
+                    line = '<Leader>/',
+                    block = '<Leader><Leader>/',
+                },
+                opleader = {
+                    line = "<Leader>/",
+                    block = '<Leader><Leader>/',
+                },
+            })
+        end
     },                                          -- Commenting
     {
         'github/copilot.vim',
