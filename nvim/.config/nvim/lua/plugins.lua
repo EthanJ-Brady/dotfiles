@@ -30,9 +30,6 @@ require("lazy").setup({
         'ap/vim-css-color'
     },                                          -- CSS color preview
     {
-        'terryma/vim-smooth-scroll'
-    },                                          -- Smooth scroll with ctrl+u and ctrl+d
-    {
         'tpope/vim-fugitive',
     },                                          -- Git commands
     {
@@ -40,7 +37,7 @@ require("lazy").setup({
         build = ':TSUpdate',
         config = function()
             require("nvim-treesitter.configs").setup {
-                ensure_installed = { "python", "markdown", "markdown_inline", "html", "css", "javascript", "typescript", "lua", "json", "yaml", "toml", "bash", "c", "cpp", "rust", "go", "java", "regex", "tsx" },
+                ensure_installed = { "python", "markdown", "markdown_inline", "html", "css", "javascript", "typescript", "lua", "json", "yaml", "toml", "bash", "c", "cpp", "rust", "go", "java", "regex", "tsx", "nix" },
                 highlight = {
                     enable = true,
                 },
@@ -80,6 +77,18 @@ require("lazy").setup({
     {
         'ryanoasis/vim-devicons'
     },                                          -- NerdTree icons
+    {
+        "karb94/neoscroll.nvim",
+        config = function ()
+            require('neoscroll').setup {
+                easing_function = "quadratic",
+            }
+            local t = {}
+            t['<PageUp>'] = {'scroll', {'-vim.wo.scroll', 'true', '100'}}
+            t['<PageDown>'] = {'scroll', {'vim.wo.scroll', 'true', '100'}}
+            require('neoscroll.config').set_mappings(t)
+        end
+    },                                          -- Smooth scrolling
 })
 
 -- Setup Mason

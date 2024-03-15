@@ -31,16 +31,6 @@ vim.api.nvim_set_keymap('n', '<End>', '$', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('i', '<Home>', '<C-o>^', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('i', '<End>', '<C-o>$', {noremap = true, silent = true})
 
--- Smooth scroll in normal mode
-vim.cmd [[
-    nnoremap <silent> <c-u> :call smooth_scroll#up(&scroll, 5, 2)<CR>
-    nnoremap <silent> <c-d> :call smooth_scroll#down(&scroll, 5, 2)<CR>
-    nnoremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 5, 4)<CR>
-    nnoremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 5, 4)<CR>
-    nnoremap <silent> <PageUp> :call smooth_scroll#up(&scroll, 10, 2)<CR>
-    nnoremap <silent> <PageDown> :call smooth_scroll#down(&scroll, 10, 2)<CR>
-]]
-
 -- Smooth scroll in insert mode
 vim.cmd [[
     inoremap <silent> <PageUp> <Esc>:call smooth_scroll#up(&scroll, 10, 2)<CR>gi
