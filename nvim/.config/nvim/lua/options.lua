@@ -23,6 +23,7 @@ vim.o.relativenumber = true         -- relative line numbers
 --vim.o.mouse = "a"                   -- enable mouse click
 vim.o.clipboard = "unnamedplus"     -- using system clipboard
 vim.o.signcolumn = "yes"            -- always show sign column
+vim.o.termguicolors = true              
 
 -- Diagnostic configuration for LSP
 vim.diagnostic.config({
