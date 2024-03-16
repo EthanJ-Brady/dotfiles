@@ -32,12 +32,12 @@ require("lazy").setup({
         config = function()
             require('Comment').setup({
                 toggler = {
-                    line = '<Leader>/',
-                    block = '<Leader><Leader>/',
+                    line = '<leader>/',
+                    block = '<leader><leader>/',
                 },
                 opleader = {
-                    line = "<Leader>/",
-                    block = '<Leader><Leader>/',
+                    line = "<leader>/",
+                    block = '<leader><leader>/',
                 },
             })
         end
