@@ -1,26 +1,32 @@
--- Setup lazy nvim plugins
 require("lazy").setup({
-    {"catppuccin/nvim"},
     {
-        "nvim-tree/nvim-tree.lua",
-        version = "*",
-        lazy = false,
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-        },
+        "catppuccin/nvim",
         config = function()
-            require("nvim-tree").setup {
-                view = {
-                    cursorline = false,
-                },
-                actions = {
-                    open_file = {
-                        quit_on_open = true,
-                    }
+            require("catppuccin").setup({
+                integrations = {
+                    mason = true,
+                }
+            })
+        end
+    }, --theme
+    {
+        'nvim-telescope/telescope.nvim', tag = '0.1.6',
+        dependencies = { 'nvim-lua/plenary.nvim' }
+    }, -- fuzzy file finder
+    {
+        'nvim-treesitter/nvim-treesitter',
+        build = ':TSUpdate',
+        config = function()
+            require("nvim-treesitter.configs").setup {
+                ensure_installed = { "python", "markdown", "markdown_inline", "html", "css", "javascript", "typescript", "lua", "json", "yaml", "toml", "bash", "c", "cpp", "rust", "go", "java", "regex", "tsx", "nix" },
+                sync_install = false,
+                highlight = {
+                    enable = true,
+                    additional_vim_regex_highlighting = false,
                 },
             }
         end
-    },
+    }, -- treesitter
     {
         'numToStr/Comment.nvim',
         config = function()
@@ -35,54 +41,31 @@ require("lazy").setup({
                 },
             })
         end
-    },                                          -- Commenting
+    }, -- commenting commands
     {
-        "zbirenbaum/copilot.lua",
+        'github/copilot.vim',
+    }, -- github copilot
+    {
+        "nvim-tree/nvim-tree.lua",
+        version = "*",
+        lazy = false,
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+            "lambdalisue/glyph-palette.vim",
+        },
         config = function()
-            require("copilot").setup({})
-        end,
-    },                                          -- GitHub Copilot
-    {
-        'ap/vim-css-color'
-    },                                          -- CSS color preview
-    {
-        'tpope/vim-fugitive',
-    },                                          -- Git commands
-    {
-        'nvim-treesitter/nvim-treesitter',
-        build = ':TSUpdate',
-        config = function()
-            require("nvim-treesitter.configs").setup {
-                ensure_installed = { "python", "markdown", "markdown_inline", "html", "css", "javascript", "typescript", "lua", "json", "yaml", "toml", "bash", "c", "cpp", "rust", "go", "java", "regex", "tsx", "nix" },
-                highlight = {
-                    enable = true,
-                    additional_vim_regex_highlighting = false,
-                    disable = { "latex" },
+            require("nvim-tree").setup {
+                view = {
+                    cursorline = false,
+                },
+                actions = {
+                    open_file = {
+                        quit_on_open = true,
+                    }
                 },
             }
         end
-    },                                          -- Syntax highlighting
-    {
-        'lambdalisue/glyph-palette.vim',
-    },                                          -- NerdTree icon colors
-    {
-        'williamboman/mason.nvim',
-        config = function()
-            require('mason').setup {}
-        end
-    },                                          -- LSP manager
-    {
-s       'williamboman/mason-lspconfig.nvim',
-        config = function()
-            require('mason-lspconfig').setup {}
-        end
-    },                                          -- LSP
-    {
-        'neovim/nvim-lspconfig',
-        config = function ()
-            require('lspconfig').pyright.setup {}
-        end
-    },                                          -- LSP
+    }, -- file browser
     {
         'lukas-reineke/indent-blankline.nvim',
         config = function ()
@@ -91,7 +74,7 @@ s       'williamboman/mason-lspconfig.nvim',
                 scope = { enabled = false },
             }
         end
-    },                                          -- Indent line characters
+    }, -- indent lines
     {
         'nvim-lualine/lualine.nvim',
         config = function ()
@@ -104,23 +87,17 @@ s       'williamboman/mason-lspconfig.nvim',
                 },
             }
         end
-    },                                          -- Status line
+    }, -- status line
     {
         'lervag/vimtex',
         ft = { 'tex' },
-    },                                          -- Latex helper
-    {
-        'nvimdev/lspsaga.nvim',
-        config = function ()
-            require('lspsaga').setup()
-        end
-    },                                          -- LSP UI
+    }, -- latex
     {
         'airblade/vim-gitgutter',
-    },                                          -- Git diff
+    }, -- git gutter
     {
         'dstein64/vim-startuptime'
-    },                                          -- View startup timing information
+    }, -- startuptime
     {
         "karb94/neoscroll.nvim",
         config = function ()
@@ -132,48 +109,15 @@ s       'williamboman/mason-lspconfig.nvim',
             t['<PageDown>'] = {'scroll', {'vim.wo.scroll', 'true', '100'}}
             require('neoscroll.config').set_mappings(t)
         end
-    },                                          -- Smooth scrolling
-    {"hrsh7th/nvim-cmp"}, -- The main completion plugin
-    {"hrsh7th/cmp-nvim-lsp"}, -- LSP source for nvim-cmp
-    {"hrsh7th/cmp-buffer"}, -- Buffer completions
-    {"hrsh7th/cmp-path"}, -- Path completions
-    {"hrsh7th/cmp-cmdline"}, -- Command line completions
-    {"saadparwaiz1/cmp_luasnip"}, -- Snippet completions
-    {"L3MON4D3/LuaSnip"}, -- Snippet engine
-    {"rafamadriz/friendly-snippets"}, -- A collection of snippets
-    {
-        "zbirenbaum/copilot-cmp",
-        config = function ()
-            require("copilot_cmp").setup()
-        end
-    },
+    }, -- smooth scrolling
+    { 'tpope/vim-fugitive' }, -- git wrapper
+    -- LSP --
+    {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
+    {'williamboman/mason.nvim'},
+    {'williamboman/mason-lspconfig.nvim'},
+    {'neovim/nvim-lspconfig'},
+    {'hrsh7th/cmp-nvim-lsp'},
+    {'hrsh7th/nvim-cmp'},
+    {'L3MON4D3/LuaSnip'},
+    ---------
 })
-
--- Snippet setup
-local luasnip = require 'luasnip'
-
--- nvim-cmp setup
-local cmp = require 'cmp'
-cmp.setup {
-    snippet = {
-        expand = function(args)
-            require('luasnip').lsp_expand(args.body)
-        end,
-    },
-    mapping = cmp.mapping.preset.insert({
-        ['<Tab>'] = cmp.mapping.select_next_item(),
-        ['<S-Tab>'] = cmp.mapping.select_prev_item(),
-        ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.close(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    }),
-    sources = cmp.config.sources({
-        { name = "copilot", group_index = 2 },
-        { name = 'nvim_lsp' },
-        { name = 'luasnip' },
-    }, {
-        { name = 'buffer' },
-    })
-}
