@@ -1,6 +1,0 @@
-lua require("init")
-lua require("colors")
-lua require("keybinds")
-lua require("plugins")
-lua require("options")
-lua require("files")
