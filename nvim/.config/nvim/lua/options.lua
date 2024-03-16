@@ -26,6 +26,8 @@ vim.o.signcolumn = "yes"            -- always show sign column
 vim.o.termguicolors = true              
 vim.o.scrolloff = 8                 -- keep 8 lines above and below the cursor
 
+vim.cmd[[colorscheme catppuccin-mocha]]
+
 -- Diagnostic configuration for LSP
 vim.diagnostic.config({
   virtual_text = true,

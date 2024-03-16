@@ -1,5 +1,6 @@
 -- Setup lazy nvim plugins
 require("lazy").setup({
+    {"catppuccin/nvim"},
     {
         "nvim-tree/nvim-tree.lua",
         version = "*",
@@ -36,7 +37,10 @@ require("lazy").setup({
         end
     },                                          -- Commenting
     {
-        'github/copilot.vim',
+        "zbirenbaum/copilot.lua",
+        config = function()
+            require("copilot").setup({})
+        end,
     },                                          -- GitHub Copilot
     {
         'ap/vim-css-color'
@@ -52,6 +56,8 @@ require("lazy").setup({
                 ensure_installed = { "python", "markdown", "markdown_inline", "html", "css", "javascript", "typescript", "lua", "json", "yaml", "toml", "bash", "c", "cpp", "rust", "go", "java", "regex", "tsx", "nix" },
                 highlight = {
                     enable = true,
+                    additional_vim_regex_highlighting = false,
+                    disable = { "latex" },
                 },
             }
         end
@@ -60,25 +66,54 @@ require("lazy").setup({
         'lambdalisue/glyph-palette.vim',
     },                                          -- NerdTree icon colors
     {
-        'williamboman/mason.nvim'
+        'williamboman/mason.nvim',
+        config = function()
+            require('mason').setup {}
+        end
     },                                          -- LSP manager
     {
-        'williamboman/mason-lspconfig.nvim'
+s       'williamboman/mason-lspconfig.nvim',
+        config = function()
+            require('mason-lspconfig').setup {}
+        end
     },                                          -- LSP
     {
-        'neovim/nvim-lspconfig'
+        'neovim/nvim-lspconfig',
+        config = function ()
+            require('lspconfig').pyright.setup {}
+        end
     },                                          -- LSP
     {
-        'lukas-reineke/indent-blankline.nvim'
+        'lukas-reineke/indent-blankline.nvim',
+        config = function ()
+            require('ibl').setup {
+                indent = { char = "│" },
+                scope = { enabled = false },
+            }
+        end
     },                                          -- Indent line characters
     {
-        'nvim-lualine/lualine.nvim'
+        'nvim-lualine/lualine.nvim',
+        config = function ()
+            require('lualine').setup {
+                options = {
+                    theme = 'catppuccin',
+                    disabled_filetypes = {
+                        'NvimTree',
+                    },
+                },
+            }
+        end
     },                                          -- Status line
     {
-        'lervag/vimtex'
+        'lervag/vimtex',
+        ft = { 'tex' },
     },                                          -- Latex helper
     {
-        'nvimdev/lspsaga.nvim'
+        'nvimdev/lspsaga.nvim',
+        config = function ()
+            require('lspsaga').setup()
+        end
     },                                          -- LSP UI
     {
         'airblade/vim-gitgutter',
@@ -86,9 +121,6 @@ require("lazy").setup({
     {
         'dstein64/vim-startuptime'
     },                                          -- View startup timing information
-    {
-        'ryanoasis/vim-devicons'
-    },                                          -- NerdTree icons
     {
         "karb94/neoscroll.nvim",
         config = function ()
@@ -101,34 +133,47 @@ require("lazy").setup({
             require('neoscroll.config').set_mappings(t)
         end
     },                                          -- Smooth scrolling
+    {"hrsh7th/nvim-cmp"}, -- The main completion plugin
+    {"hrsh7th/cmp-nvim-lsp"}, -- LSP source for nvim-cmp
+    {"hrsh7th/cmp-buffer"}, -- Buffer completions
+    {"hrsh7th/cmp-path"}, -- Path completions
+    {"hrsh7th/cmp-cmdline"}, -- Command line completions
+    {"saadparwaiz1/cmp_luasnip"}, -- Snippet completions
+    {"L3MON4D3/LuaSnip"}, -- Snippet engine
+    {"rafamadriz/friendly-snippets"}, -- A collection of snippets
+    {
+        "zbirenbaum/copilot-cmp",
+        config = function ()
+            require("copilot_cmp").setup()
+        end
+    },
 })
 
--- Setup Mason
-require("mason").setup()
+-- Snippet setup
+local luasnip = require 'luasnip'
 
--- Setup Mason LSPconfig
-require("mason-lspconfig").setup()
-
--- Setup LSP for Python with Pyright
-require("lspconfig").pyright.setup {}
-
--- Setup for indent-blankline plugin with Lua
-require("ibl").setup { 
-    indent = { char = "│" },
-    scope = { enabled = false },
+-- nvim-cmp setup
+local cmp = require 'cmp'
+cmp.setup {
+    snippet = {
+        expand = function(args)
+            require('luasnip').lsp_expand(args.body)
+        end,
+    },
+    mapping = cmp.mapping.preset.insert({
+        ['<Tab>'] = cmp.mapping.select_next_item(),
+        ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+        ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-e>'] = cmp.mapping.close(),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    }),
+    sources = cmp.config.sources({
+        { name = "copilot", group_index = 2 },
+        { name = 'nvim_lsp' },
+        { name = 'luasnip' },
+    }, {
+        { name = 'buffer' },
+    })
 }
-
--- Setup for lualine with the 'dracula' theme
-require("lualine").setup { options = { theme = "dracula" } }
-
--- Treesitter configuration
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = false,
-    disable = { "latex" },
-  },
-}
-
--- Setup for lspsaga.nvim
-require("lspsaga").setup({})
