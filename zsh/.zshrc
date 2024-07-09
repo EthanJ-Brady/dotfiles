@@ -19,8 +19,9 @@ alias ll='eza -lh'                          # ...
 alias l='eza -lah'                          # ...
 alias cat='bat'                             # Use bat as the default cat
 
-export PATH="$PATH:/home/ethan/.local/bin"  # Add local bin to the path 
-export PATH="$PATH:/home/ethan/.pyenv/bin"  # Add pyenv to the path
+export PATH="$PATH:/home/ethan/.local/bin"
+export PATH="$PATH:/home/ethan/.pyenv/bin"
+export PATH="$PATH:/usr/local/bin"
 
 setopt HIST_EXPIRE_DUPS_FIRST               # Clean up duplicates in history
 setopt HIST_IGNORE_DUPS
