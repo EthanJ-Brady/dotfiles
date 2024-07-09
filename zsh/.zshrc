@@ -23,6 +23,8 @@ alias cat='bat'                             # Use bat as the default cat
 export PATH="$PATH:/home/ethan/.local/bin"  # Add local bin to the path 
 export PATH="$PATH:/home/ethan/.pyenv/bin"  # Add pyenv to the path
 
+eval "$(starship init zsh)"
+
 setopt HIST_EXPIRE_DUPS_FIRST               # Clean up duplicates in history
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
