@@ -18,7 +18,7 @@ require("lazy").setup({
         build = ':TSUpdate',
         config = function()
             require("nvim-treesitter.configs").setup {
-                ensure_installed = { "python", "markdown", "markdown_inline", "html", "css", "javascript", "typescript", "lua", "json", "yaml", "toml", "bash", "c", "cpp", "rust", "go", "java", "regex", "tsx", "nix" },
+                ensure_installed = { "python", "markdown", "markdown_inline", "html", "css", "javascript", "typescript", "lua", "json", "yaml", "toml", "bash", "c", "cpp", "rust", "go", "java", "regex", "tsx", "nix", "c_sharp", "gdscript" },
                 sync_install = false,
                 highlight = {
                     enable = true,
@@ -43,7 +43,12 @@ require("lazy").setup({
         end
     }, -- commenting commands
     {
-        'github/copilot.vim',
+        'zbirenbaum/copilot.lua',
+        cmd = "Copilot",
+        event = "InsertEnter",
+        config = function()
+            require("copilot").setup({})
+        end,
     }, -- github copilot
     {
         "nvim-tree/nvim-tree.lua",
@@ -119,5 +124,10 @@ require("lazy").setup({
     {'hrsh7th/cmp-nvim-lsp'},
     {'hrsh7th/nvim-cmp'},
     {'L3MON4D3/LuaSnip'},
-    ---------
+    {
+        "zbirenbaum/copilot-cmp",
+        config = function ()
+            require("copilot_cmp").setup()
+        end
+    },
 })
