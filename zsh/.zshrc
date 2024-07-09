@@ -11,8 +11,6 @@ plugins=(
 source $ZSH/oh-my-zsh.sh                    # Load oh-my-zsh
 eval "$(zoxide init zsh)"                   # Load zoxide
 
-function precmd() {echo ""}                 # Add a newline before each prompt
-
 alias python='python3'                      # Use python3 as the default python
 alias cd='z'                                # Use zoxide as the default cd
 alias ls='eza'                              # Use eza as the default ls
