@@ -1072,15 +1072,37 @@
                         ]
                     },
                     {
+                        "description": "Symbols Layer Toggle",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "right_control",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "symbols",
+                                            "value": true,
+                                            "key_up_value": false
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Extend Symbols Numpad (Numeric Only)",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1091,15 +1113,19 @@
                                         "key_code": "1"
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "comma",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1110,15 +1136,19 @@
                                         "key_code": "2"
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "period",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1129,15 +1159,19 @@
                                         "key_code": "3"
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "n",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1148,15 +1182,19 @@
                                         "key_code": "4"
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "e",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1167,15 +1205,19 @@
                                         "key_code": "5"
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "i",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1186,15 +1228,19 @@
                                         "key_code": "6"
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1205,15 +1251,19 @@
                                         "key_code": "7"
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "u",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1224,15 +1274,19 @@
                                         "key_code": "8"
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "y",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1243,15 +1297,19 @@
                                         "key_code": "9"
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1262,6 +1320,13 @@
                                         "key_code": "0"
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             }
                         ]
@@ -1273,9 +1338,6 @@
                                 "from": {
                                     "key_code": "o",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1286,15 +1348,19 @@
                                         "key_code": "hyphen"
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "m",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1308,15 +1374,19 @@
                                         ]
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1327,15 +1397,19 @@
                                         "key_code": "equal_sign"
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "quote",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1349,15 +1423,19 @@
                                         ]
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "backslash",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1368,15 +1446,19 @@
                                         "key_code": "period"
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "right_shift",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1387,6 +1469,13 @@
                                         "key_code": "slash"
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             }
                         ]
@@ -1398,9 +1487,6 @@
                                 "from": {
                                     "key_code": "s",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1414,15 +1500,19 @@
                                         ]
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "c",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1436,15 +1526,19 @@
                                         ]
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "t",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1458,15 +1552,19 @@
                                         ]
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "d",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1480,15 +1578,19 @@
                                         ]
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "g",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1499,15 +1601,19 @@
                                         "key_code": "open_bracket"
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "v",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1518,6 +1624,13 @@
                                         "key_code": "close_bracket"
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             }
                         ]
@@ -1529,9 +1642,6 @@
                                 "from": {
                                     "key_code": "return_or_enter",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1545,15 +1655,19 @@
                                         ]
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "a",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1564,15 +1678,19 @@
                                         "key_code": "backslash"
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "r",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1586,15 +1704,19 @@
                                         ]
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "q",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1608,15 +1730,19 @@
                                         ]
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "w",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1630,15 +1756,19 @@
                                         ]
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "f",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1652,15 +1782,19 @@
                                         ]
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "p",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1674,15 +1808,19 @@
                                         ]
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "b",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1696,15 +1834,19 @@
                                         ]
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "x",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1718,15 +1860,19 @@
                                         ]
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "z",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1740,15 +1886,19 @@
                                         ]
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "open_bracket",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1762,15 +1912,19 @@
                                         ]
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "close_bracket",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_control"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -1781,6 +1935,13 @@
                                         "key_code": "grave_accent_and_tilde"
                                     }
                                 ],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "symbols",
+                                        "value": true 
+                                    }
+                                ], 
                                 "type": "basic"
                             }
                         ]
