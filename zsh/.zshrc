@@ -5,9 +5,10 @@ zstyle ':omz:update' mode auto              # update automatically without askin
 plugins=(
     git
     zsh-syntax-highlighting
-    zsh-fzf-history-search
 )
 source $ZSH/oh-my-zsh.sh                    # Load oh-my-zsh
+
+source <(fzf --zsh)
 
 eval "$(zoxide init zsh)"                   # Load zoxide
 eval "$(starship init zsh)"		    # Load starship
@@ -34,3 +35,10 @@ temp() {
     cp -r "${HOME}/Temps/${1}" .
     echo "Successully created ${1}"
 }
+
+# bun completions
+[ -s "/Users/ethanbrady/.bun/_bun" ] && source "/Users/ethanbrady/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
